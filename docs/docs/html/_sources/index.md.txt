@@ -47,10 +47,10 @@ Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
 Cargamos el módulo de python que vayamos a usar, por ejemplo:
 
 ```console
-    $ module python-3.7.0-gcc-8.3.0-3gbn5jk
+    $ module load python-3.7.0-gcc-8.3.0-3gbn5jk
 ```
 
-Creamos un nuevo *environment* y lo activamos:
+Creamos un nuevo *environment* y lo activamos cada vez que hagamos uso del mismo:
 
 ```console
     $ python -m venv .

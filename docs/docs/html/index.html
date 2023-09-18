@@ -196,66 +196,47 @@
 </div>
 <section id="instalacion-de-paquetes-r">
 <h2>Instalación de paquetes R<a class="headerlink" href="#instalacion-de-paquetes-r" title="Link to this heading">#</a></h2>
-<p>Creamos entornos virtuales para cada uno de nuestros proyectos en directorios específicos.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir mi_nuevo_proyectoen_R
-$ cd mi_nuevo_proyectoen_R
-$ module load R
-$ R
+<p>Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">   $ </span>mkdir<span class="w"> </span>~/mi_nuevo_proyectoen_R
+<span class="gp">   $ </span><span class="nb">cd</span><span class="w"> </span>~/mi_nuevo_proyectoen_R
 </pre></div>
 </div>
-<p>Instalamos el paquete renv:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;renv&quot;</span><span class="p">)</span>
-<span class="n">Warning</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;renv&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
-<span class="s">&#39;lib = &quot;/mnt/lustre/localsoft/R-v3.6.0/rlib/R/library&quot;&#39;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">writable</span>
-<span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="n">instead</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span><span class="w"> </span><span class="n">yes</span>
-<span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span>
-‘<span class="o">~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">3.6</span>’
-<span class="n">to</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">packages</span><span class="w"> </span><span class="n">into</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span><span class="w"> </span><span class="n">yes</span>
-<span class="o">---</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">select</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">CRAN</span><span class="w"> </span><span class="n">mirror</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">---</span>
-<span class="n">Secure</span><span class="w"> </span><span class="n">CRAN</span><span class="w"> </span><span class="n">mirrors</span>
-<span class="n">Selection</span><span class="o">:</span><span class="w"> </span><span class="m">60</span>
-<span class="n">trying</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="s">&#39;https://cran.rediris.es/src/contrib/renv_1.0.2.tar.gz&#39;</span>
-<span class="n">Content</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="s">&#39;application/x-gzip&#39;</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="m">1135957</span><span class="w"> </span><span class="nf">bytes </span><span class="p">(</span><span class="m">1.1</span><span class="w"> </span><span class="n">MB</span><span class="p">)</span>
-<span class="o">==================================================</span>
-<span class="n">downloaded</span><span class="w"> </span><span class="m">1.1</span><span class="w"> </span><span class="n">MB</span>
-
-<span class="o">*</span><span class="w"> </span><span class="n">installing</span><span class="w"> </span><span class="o">*</span><span class="n">source</span><span class="o">*</span><span class="w"> </span><span class="n">package</span><span class="w"> </span>‘<span class="n">renv</span>’<span class="w"> </span><span class="kc">...</span>
-<span class="o">**</span><span class="w"> </span><span class="n">package</span><span class="w"> </span>‘<span class="n">renv</span>’<span class="w"> </span><span class="n">successfully</span><span class="w"> </span><span class="n">unpacked</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">MD5</span><span class="w"> </span><span class="n">sums</span><span class="w"> </span><span class="n">checked</span>
-<span class="o">**</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="n">installation</span>
-<span class="o">**</span><span class="w"> </span><span class="n">R</span>
-<span class="o">**</span><span class="w"> </span><span class="n">inst</span>
-<span class="o">**</span><span class="w"> </span><span class="n">byte</span><span class="o">-</span><span class="n">compile</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">prepare</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">lazy</span><span class="w"> </span><span class="n">loading</span>
-<span class="o">**</span><span class="w"> </span><span class="n">help</span>
-<span class="o">***</span><span class="w"> </span><span class="n">installing</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">indices</span>
-<span class="o">***</span><span class="w"> </span><span class="n">copying</span><span class="w"> </span><span class="n">figures</span>
-<span class="o">**</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">indices</span>
-<span class="o">**</span><span class="w"> </span><span class="n">installing</span><span class="w"> </span><span class="n">vignettes</span>
-<span class="o">**</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">installed</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">loaded</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">temporary</span><span class="w"> </span><span class="n">location</span>
-<span class="o">**</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">installed</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">loaded</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">final</span><span class="w"> </span><span class="n">location</span>
-<span class="o">**</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">installed</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">keeps</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">record</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">temporary</span><span class="w"> </span><span class="n">installation</span><span class="w"> </span><span class="n">path</span>
-<span class="o">*</span><span class="w"> </span><span class="nf">DONE </span><span class="p">(</span><span class="n">renv</span><span class="p">)</span>
-
-<span class="n">The</span><span class="w"> </span><span class="n">downloaded</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">packages</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">in</span>
-<span class="w">    </span>‘<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">Rtmpyi8JG0</span><span class="o">/</span><span class="n">downloaded_packages</span>’
-<span class="o">&gt;</span>
+<p>Cargamos el módulo de R que vayamos a usar, por ejemplo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>r-3.5.1-gcc-8.2.0-lnyyu4a
+<span class="gp">    $ </span>R
 </pre></div>
 </div>
-<p>Y activamos el entorno:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">library</span><span class="p">(</span><span class="n">renv</span><span class="p">)</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="n">renv</span><span class="o">::</span><span class="nf">init</span><span class="p">()</span>
-<span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="nf">package</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">updated</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">lockfile</span><span class="o">:</span>
-<span class="c1"># CRAN -----------------------------------------------------------------------</span>
-<span class="o">-</span><span class="w"> </span><span class="n">renv</span><span class="w">   </span><span class="p">[</span><span class="o">*</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="m">1.0</span><span class="n">.</span><span class="m">2</span><span class="p">]</span>
-<span class="n">The</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">recorded</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">lockfile</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">updated</span><span class="o">:</span>
-<span class="o">-</span><span class="w"> </span><span class="n">R</span><span class="w">      </span><span class="p">[</span><span class="o">*</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="m">3.6</span><span class="n">.</span><span class="m">0</span><span class="p">]</span>
-<span class="o">-</span><span class="w"> </span><span class="n">Lockfile</span><span class="w"> </span><span class="n">written</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;~/Pruebas/R_tests/renv.lock&quot;</span><span class="n">.</span>
-<span class="o">-</span><span class="w"> </span><span class="n">renv</span><span class="w"> </span><span class="n">activated</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">please</span><span class="w"> </span><span class="n">restart</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">session.</span>
+<p>Instalamos por ejemplo <strong>CDFt</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="o">&gt;</span> <span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;CDFt&quot;</span><span class="p">,</span> <span class="n">lib</span><span class="o">=</span><span class="s2">&quot;~/mi_nuevo_proyectoen_R/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nf">library</span><span class="p">(</span><span class="n">renv</span><span class="p">)</span>
-<span class="w">   </span><span class="n">renv</span><span class="o">::</span><span class="nf">init</span><span class="p">()</span>
+<p>Y para usarlo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="o">&gt;</span> <span class="n">library</span><span class="p">(</span><span class="s2">&quot;CDFt&quot;</span><span class="p">,</span> <span class="n">lib</span><span class="o">=</span><span class="s2">&quot;~/mi_nuevo_proyectoen_R/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html">Más info</a></p>
+</section>
+<section id="instalacion-de-paquetes-python">
+<h2>Instalación de paquetes python<a class="headerlink" href="#instalacion-de-paquetes-python" title="Link to this heading">#</a></h2>
+<p>Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">   $ </span>mkdir<span class="w"> </span>~/mi_nuevo_proyectoen_py
+<span class="gp">   $ </span><span class="nb">cd</span><span class="w"> </span>~/mi_nuevo_proyectoen_py
+</pre></div>
+</div>
+<p>Cargamos el módulo de python que vayamos a usar, por ejemplo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>python-3.7.0-gcc-8.3.0-3gbn5jk
+</pre></div>
+</div>
+<p>Creamos un nuevo <em>environment</em> y lo activamos:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.
+<span class="gp">    $ </span><span class="nb">source</span><span class="w"> </span>bin/activate
+</pre></div>
+</div>
+<p>Ya podemos instalar paquetes en este <em>environment</em>, por ejemplo con <em>pip</em>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>pip<span class="w"> </span>install<span class="w"> </span>keras
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/3/library/venv.html">Más info</a></p>
 </section>
 </section>
 
@@ -298,6 +279,7 @@ $ R
             <ul>
 <li><a class="reference internal" href="#">Python y R</a><ul>
 <li><a class="reference internal" href="#instalacion-de-paquetes-r">Instalación de paquetes R</a></li>
+<li><a class="reference internal" href="#instalacion-de-paquetes-python">Instalación de paquetes python</a></li>
 </ul>
 </li>
 </ul>

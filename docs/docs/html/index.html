@@ -202,7 +202,7 @@
 </pre></div>
 </div>
 <p>Cargamos el módulo de R que vayamos a usar, por ejemplo:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>r-3.5.1-gcc-8.2.0-lnyyu4a
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>r-4.2.2-gcc-13.1.0-vwiev6z
 <span class="gp">    $ </span>R
 </pre></div>
 </div>
@@ -218,13 +218,15 @@
 </section>
 <section id="instalacion-de-paquetes-python">
 <h2>Instalación de paquetes python<a class="headerlink" href="#instalacion-de-paquetes-python" title="Link to this heading">#</a></h2>
+<section id="usando-python-y-pip">
+<h3>1. Usando python y pip<a class="headerlink" href="#usando-python-y-pip" title="Link to this heading">#</a></h3>
 <p>Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">   $ </span>mkdir<span class="w"> </span>~/mi_nuevo_proyectoen_py
 <span class="gp">   $ </span><span class="nb">cd</span><span class="w"> </span>~/mi_nuevo_proyectoen_py
 </pre></div>
 </div>
 <p>Cargamos el módulo de python que vayamos a usar, por ejemplo:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>python-3.7.0-gcc-8.3.0-3gbn5jk
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>python-3.10.10-gcc-13.1.0-7zoc5dm<span class="w"> </span>
 </pre></div>
 </div>
 <p>Creamos un nuevo <em>environment</em> y lo activamos cada vez que hagamos uso del mismo:</p>
@@ -237,6 +239,15 @@
 </pre></div>
 </div>
 <p><a class="reference external" href="https://docs.python.org/3/library/venv.html">Más info</a></p>
+</section>
+<section id="usando-conda">
+<h3>2. Usando conda<a class="headerlink" href="#usando-conda" title="Link to this heading">#</a></h3>
+<p>Cargamos el módulo anaconda:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>anaconda3-2022.10-gcc-8.5.0-4dp3trd
+</pre></div>
+</div>
+<p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Y seguimos estas instrucciones:</a></p>
+</section>
 </section>
 </section>
 
@@ -279,7 +290,11 @@
             <ul>
 <li><a class="reference internal" href="#">Python y R</a><ul>
 <li><a class="reference internal" href="#instalacion-de-paquetes-r">Instalación de paquetes R</a></li>
-<li><a class="reference internal" href="#instalacion-de-paquetes-python">Instalación de paquetes python</a></li>
+<li><a class="reference internal" href="#instalacion-de-paquetes-python">Instalación de paquetes python</a><ul>
+<li><a class="reference internal" href="#usando-python-y-pip">1. Usando python y pip</a></li>
+<li><a class="reference internal" href="#usando-conda">2. Usando conda</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

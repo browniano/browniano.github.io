@@ -18,7 +18,7 @@ Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
 Cargamos el módulo de R que vayamos a usar, por ejemplo:
 
 ```console
-    $ module load r-3.5.1-gcc-8.2.0-lnyyu4a
+    $ module load r-4.2.2-gcc-13.1.0-vwiev6z
     $ R
 ```
 
@@ -37,6 +37,8 @@ Y para usarlo:
 
 ## Instalación de paquetes python
 
+### 1. Usando python y pip
+
 Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
 
 ```console
@@ -47,7 +49,7 @@ Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
 Cargamos el módulo de python que vayamos a usar, por ejemplo:
 
 ```console
-    $ module load python-3.7.0-gcc-8.3.0-3gbn5jk
+    $ module load python-3.10.10-gcc-13.1.0-7zoc5dm 
 ```
 
 Creamos un nuevo *environment* y lo activamos cada vez que hagamos uso del mismo:
@@ -64,3 +66,13 @@ Ya podemos instalar paquetes en este *environment*, por ejemplo con *pip*:
 ```
 
 [Más info](https://docs.python.org/3/library/venv.html)
+
+### 2. Usando conda
+
+Cargamos el módulo anaconda:
+
+```console
+    $ module load anaconda3-2022.10-gcc-8.5.0-4dp3trd
+```
+
+[Y seguimos estas instrucciones:](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)

@@ -75,4 +75,29 @@ Cargamos el módulo anaconda:
     $ module load anaconda3-2022.10-gcc-8.5.0-4dp3trd
 ```
 
-[Y seguimos estas instrucciones](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+Creamos un nuevo *environment* y lo activamos cada vez que hagamos uso del mismo:
+
+```console
+    $ conda create --name  myenv
+    $ conda activate myenv
+```
+
+Ya podemos instalar paquetes en este *environment*:
+
+```console
+    $ conda install -c conda-forge keras
+```
+
+Para desactivar el *environment* actual:
+
+```console
+    $ conda deactivate
+```
+
+Para listar los *environments* disponibles:
+
+```console
+    $ conda info --envs
+```
+
+[Más info](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)

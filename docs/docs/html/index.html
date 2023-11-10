@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
         <title>documentación de HPCdocs -</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
@@ -246,7 +246,24 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>module<span class="w"> </span>load<span class="w"> </span>anaconda3-2022.10-gcc-8.5.0-4dp3trd
 </pre></div>
 </div>
-<p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Y seguimos estas instrucciones</a></p>
+<p>Creamos un nuevo <em>environment</em> y lo activamos cada vez que hagamos uso del mismo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w">  </span>myenv
+<span class="gp">    $ </span>conda<span class="w"> </span>activate<span class="w"> </span>myenv
+</pre></div>
+</div>
+<p>Ya podemos instalar paquetes en este <em>environment</em>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>keras
+</pre></div>
+</div>
+<p>Para desactivar el <em>environment</em> actual:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>Para listar los <em>environments</em> disponibles:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $ </span>conda<span class="w"> </span>info<span class="w"> </span>--envs
+</pre></div>
+</div>
+<p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Más info</a></p>
 </section>
 </section>
 </section>

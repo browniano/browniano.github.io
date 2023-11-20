@@ -1,10 +1,19 @@
 # Python y R
 
-Instalación de paquetes en **directorios de usuario**.
 
 ```{warning}
 Documentación en construcción.
 ```
+
+Instalación de paquetes en **directorios de usuario**.
+
+Se supone que estamos trabajando en un nodo de cómputo, es decir, hemos solicitado un trabajo de compilación, p. ej.:
+
+```console
+   $ salloc -n 1 --partition=compilar --time=01:00:00
+```
+
+
 
 ## Instalación de paquetes R
 
@@ -15,24 +24,31 @@ Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
    $ cd ~/mi_nuevo_proyectoen_R
 ```
 
-Cargamos el módulo de R que vayamos a usar, por ejemplo:
+Cargamos el módulo de R que vayamos a usar, p. ej. con gcc-13 :
 
 ```console
+    $ module load gcc-13.1.0-gcc-8.5.0-ueufrru
     $ module load r-4.2.2-gcc-13.1.0-vwiev6z
     $ R
 ```
 
-Instalamos por ejemplo **CDFt**
+Instalamos por ejemplo **CDFt** desde el repositorio **https://cran.rediris.es** con todas sus dependencias:
 
 ```python
-   > install.packages("CDFt", lib="~/mi_nuevo_proyectoen_R/")
+   > install.packages("CDFt", lib="~/mi_nuevo_proyectoen_R/",
+   repos='https://cran.rediris.es',dependencies=TRUE)
 ```
+
+Si no especificamos la opción **lib=** nos preguntará si queremos crear un nuevo directorio local.
 
 Y para usarlo:
 
 ```python
    > library("CDFt", lib="~/mi_nuevo_proyectoen_R/")
 ```
+
+
+
 [Más info](https://cran.r-project.org/doc/manuals/r-release/R-admin.html)
 
 ## Instalación de paquetes python
@@ -46,7 +62,7 @@ Creamos un nuevo directorio donde irán los paquetes de nuestro proyecto:
    $ cd ~/mi_nuevo_proyectoen_py
 ```
 
-Cargamos el módulo de python que vayamos a usar, por ejemplo:
+Cargamos el módulo de python que vayamos a usar, p. ej.:
 
 ```console
     $ module load python-3.10.10-gcc-13.1.0-7zoc5dm 
@@ -59,7 +75,9 @@ Creamos un nuevo *environment* y lo activamos cada vez que hagamos uso del mismo
     $ source bin/activate
 ```
 
-Ya podemos instalar paquetes en este *environment*, por ejemplo con *pip*:
+
+Ya podemos activar e instalar paquetes en este *environment*, por ejemplo con *pip*:
+
 
 ```console
     $ pip install keras
@@ -79,12 +97,19 @@ Creamos un nuevo *environment* y lo activamos cada vez que hagamos uso del mismo
 
 ```console
     $ conda create --name  myenv
-    $ conda activate myenv
 ```
 
-Ya podemos instalar paquetes en este *environment*:
+Ahora ejecutamos (una única vez):
 
 ```console
+    $ conda init bash
+```
+
+Con lo que conda creará un apéndice en el fichero *.bashrc*, que se leerá en el próximo inicio de la terminal.
+Ya podemos activar e instalar paquetes en este *environment*:
+
+```console
+    $ conda activate myenv
     $ conda install -c conda-forge keras
 ```
 
